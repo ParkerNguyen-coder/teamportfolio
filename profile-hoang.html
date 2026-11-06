@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Bá Đức Hoàng | Senior Tech Lead & Cloud Architect</title>
+    <meta name="description" content="Tech Lead với 8+ năm kinh nghiệm xây dựng hệ thống phần mềm quy mô lớn, chuyên gia cloud architecture và distributed systems.">
+    <link rel="stylesheet" href="profile-hoang.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="loader"></div>
+        <div class="loading-text" id="loadingText">
+            <span class="typing-effect">Loading system architecture...</span>
+        </div>
+    </div>
+    
+    <!-- Navigation -->
+    <nav class="expert-nav" id="navbar">
+        <div class="container nav-container">
+            <a href="/index.html" class="nav-brand">
+                <i class="fas fa-terminal"></i>
+                HOANG<span>DEV</span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active"><i class="fas fa-home"></i> Main</a></li>
+                <li><a href="#stats"><i class="fas fa-chart-line"></i> Stats</a></li>
+                <li><a href="#skills"><i class="fas fa-cogs"></i> Skills</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="#projects"><i class="fas fa-code-branch"></i> Projects</a></li>
+                <li><a href="#architecture"><i class="fas fa-sitemap"></i> Architecture</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>Nguyễn Bá Đức Hoàng</h1>
+                    <div class="hero-subtitle">Senior Tech Lead & Cloud Architect</div>
+                    <p class="hero-description">8+ năm kinh nghiệm xây dựng hệ thống phần mềm quy mô lớn. Chuyên gia về Distributed Systems, Cloud Architecture và Technical Leadership tại các công ty công nghệ hàng đầu.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-laptop-code"></i> View Projects
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-hands-helping"></i> Hire Me
+                        </a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number counter" data-target="50">0</span>
+                            <span class="stat-label">Hệ Thống Lớn</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number counter" data-target="100">0</span>
+                            <span class="stat-label">Triệu Users</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number counter" data-target="8">0</span>
+                            <span class="stat-label">Bằng Sáng Chế</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number counter" data-target="99.99">0</span>
+                            <span class="stat-label">% Uptime</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="/anh/hoang.jpg" alt="Nguyễn Bá Đức Hoàng" class="profile-image">
+                        <div class="image-overlay"></div>
+                        <div class="image-badge">
+                            <i class="fas fa-medal"></i>
+                            <span>Top 1% Engineer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="stats-section">
+            <div class="container">
+                <h2 class="section-title">Metrics & Performance</h2>
+                <p class="section-subtitle">Kết quả trong phát triển phần mềm và hệ thống</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="stat-number" data-count="8">0</div>
+                        <div class="stat-label">Years Experience</div>
+                        <p class="stat-desc">Software Engineering</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-number" data-count="100">0</div>
+                        <div class="stat-label">Million Users</div>
+                        <p class="stat-desc">Systems Served</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="stat-number" data-count="50">0</div>
+                        <div class="stat-label">Large Systems</div>
+                        <p class="stat-desc">Production Deployed</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="stat-number" data-count="12">0</div>
+                        <div class="stat-label">Industry Awards</div>
+                        <p class="stat-desc">Recognition</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">Chuyên sâu software engineering và system design</p>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <h3><i class="fas fa-code"></i> Backend Development</h3>
+                            <p>High-performance scalable systems</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Golang & Java</span>
+                                <span class="skill-percentage">99%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="99"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Distributed Systems</span>
+                                <span class="skill-percentage">98%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="98"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Microservices Architecture</span>
+                                <span class="skill-percentage">97%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="97"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Database Design</span>
+                                <span class="skill-percentage">96%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="96"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                            <p>Infrastructure as code & automation</p>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">AWS/GCP/Azure</span>
+                                <span class="skill-percentage">99%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="99"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Kubernetes & Docker</span>
+                                <span class="skill-percentage">98%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="98"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">CI/CD & Automation</span>
+                                <span class="skill-percentage">97%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="97"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Terraform & Ansible</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar-container">
+                                <div class="skill-bar" data-width="95"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <h2 class="section-title">Professional Journey</h2>
+                <p class="section-subtitle">Career milestones and achievements</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2022 - Present</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Google Cloud</h3>
+                                <span class="timeline-tag">Senior SWE</span>
+                            </div>
+                            <h4>Senior Software Engineer</h4>
+                            <p>Core contributor cho globally-distributed database, xử lý 10M+ QPS với độ trễ <10ms. Lead architecture cho hệ thống real-time analytics.</p>
+                            <div class="timeline-tech">
+                                <span class="tech-tag">Go</span>
+                                <span class="tech-tag">C++</span>
+                                <span class="tech-tag">Spanner</span>
+                                <span class="tech-tag">BigQuery</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Amazon AWS</h3>
+                                <span class="timeline-tag">Tech Lead</span>
+                            </div>
+                            <h4>Tech Lead - Aurora Serverless</h4>
+                            <p>Lead engineer cho serverless database engine, tự động scale từ 0 đến 100K connections. Optimized performance 40%.</p>
+                            <div class="timeline-tech">
+                                <span class="tech-tag">Rust</span>
+                                <span class="tech-tag">Aurora</span>
+                                <span class="tech-tag">Lambda</span>
+                                <span class="tech-tag">DynamoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018 - 2020</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Microsoft Azure</h3>
+                                <span class="timeline-tag">Architect</span>
+                            </div>
+                            <h4>Software Architect</h4>
+                            <p>Designed microservices architecture for Azure Functions, improved scalability from 10K to 1M concurrent executions.</p>
+                            <div class="timeline-tech">
+                                <span class="tech-tag">C#</span>
+                                <span class="tech-tag">.NET Core</span>
+                                <span class="tech-tag">K8s</span>
+                                <span class="tech-tag">Cosmos DB</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2016 - 2018</div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Vietnam Government</h3>
+                                <span class="timeline-tag">Lead Architect</span>
+                            </div>
+                            <h4>Technical Advisor - GovTech</h4>
+                            <p>Architected national digital platform serving 50M+ citizens with 99.95% availability and enterprise-grade security.</p>
+                            <div class="timeline-tech">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Redis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title">Major Projects</h2>
+                <p class="section-subtitle">Hệ thống phần mềm quy mô lớn đã triển khai</p>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-badge">Google</div>
+                            <div class="project-year">2023</div>
+                        </div>
+                        <div class="project-body">
+                            <h3>Cloud Spanner Database</h3>
+                            <p>Core contributor cho globally-distributed database, xử lý 10M+ QPS với độ trễ <10ms.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">10M+</span>
+                                    <span class="metric-label">QPS</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value"><10ms</span>
+                                    <span class="metric-label">Latency</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">99.99%</span>
+                                    <span class="metric-label">Uptime</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Go</span>
+                                <span class="tech-tag">C++</span>
+                                <span class="tech-tag">Spanner</span>
+                                <span class="tech-tag">Protocol Buffers</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Case Study
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-badge">Amazon</div>
+                            <div class="project-year">2022</div>
+                        </div>
+                        <div class="project-body">
+                            <h3>Aurora Serverless v2</h3>
+                            <p>Lead engineer cho serverless database engine, tự động scale từ 0 đến 100K connections.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">100K</span>
+                                    <span class="metric-label">Connections</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">50M+</span>
+                                    <span class="metric-label">Users</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">40%</span>
+                                    <span class="metric-label">Performance Gain</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Rust</span>
+                                <span class="tech-tag">Aurora</span>
+                                <span class="tech-tag">S3</span>
+                                <span class="tech-tag">RDS Proxy</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Case Study
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <div class="project-badge">Vietnam Govt</div>
+                            <div class="project-year">2021</div>
+                        </div>
+                        <div class="project-body">
+                            <h3>National Digital Platform</h3>
+                            <p>Kiến trúc sư chính cho nền tảng số quốc gia, phục vụ 50+ triệu công dân.</p>
+                            <div class="project-metrics">
+                                <div class="metric">
+                                    <span class="metric-value">50M+</span>
+                                    <span class="metric-label">Citizens</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">100+</span>
+                                    <span class="metric-label">Services</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-value">99.95%</span>
+                                    <span class="metric-label">Availability</span>
+                                </div>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">K8s</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Case Study
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture Section -->
+        <section id="architecture" class="architecture-section">
+            <div class="container">
+                <h2 class="section-title">System Architecture</h2>
+                <p class="section-subtitle">Thiết kế và triển khai hệ thống phân tán quy mô lớn</p>
+                
+                <div class="architecture-grid">
+                    <div class="architecture-card">
+                        <div class="architecture-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="architecture-content">
+                            <h3>Multi-cloud Architecture</h3>
+                            <p>Thiết kế hệ thống multi-cloud (AWS+GCP+Azure) với failover tự động và load balancing thông minh.</p>
+                            <ul class="architecture-features">
+                                <li><i class="fas fa-check"></i> Zero-downtime migration</li>
+                                <li><i class="fas fa-check"></i> Cross-region replication</li>
+                                <li><i class="fas fa-check"></i> Disaster recovery</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="architecture-card">
+                        <div class="architecture-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="architecture-content">
+                            <h3>Real-time Processing</h3>
+                            <p>Hệ thống xử lý real-time data 1TB/ngày, độ trễ <100ms cho 10M+ events/giây.</p>
+                            <ul class="architecture-features">
+                                <li><i class="fas fa-check"></i> Kafka streams</li>
+                                <li><i class="fas fa-check"></i> Flink processing</li>
+                                <li><i class="fas fa-check"></i> ClickHouse analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="architecture-card">
+                        <div class="architecture-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="architecture-content">
+                            <h3>Security & Compliance</h3>
+                            <p>Architecture đạt chuẩn SOC2, ISO 27001, GDPR với end-to-end encryption.</p>
+                            <ul class="architecture-features">
+                                <li><i class="fas fa-check"></i> Zero-trust security</li>
+                                <li><i class="fas fa-check"></i> Compliance automation</li>
+                                <li><i class="fas fa-check"></i> Audit logging</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Available for architecture review and tech leadership</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-form">
+                        <h3><i class="fas fa-paper-plane"></i> Send Message</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" placeholder="your@email.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" placeholder="Project Inquiry">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h3><i class="fas fa-address-card"></i> Contact Information</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>nguyenbaduchoang@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <p>+84 977 222 333</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <p>Google Vietnam<br>Estella Place, District 2, HCMC</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-connect">
+                            <h4>Connect with me</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-stack-overflow"></i>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <i class="fas fa-terminal"></i>
+                        <span>HOANG<span>DEV</span></span>
+                    </div>
+                    <p>Senior Software Engineer & Tech Lead với 8+ năm kinh nghiệm. Chuyên gia hệ thống phân tán, cloud architecture và technical leadership.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">System Architecture</a></li>
+                        <li><a href="#">Cloud Migration</a></li>
+                        <li><a href="#">Tech Consulting</a></li>
+                        <li><a href="#">Team Training</a></li>
+                        <li><a href="#">Code Review</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h4>Tech Insights</h4>
+                    <p>Subscribe to receive architecture tips and industry insights.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nguyễn Bá Đức Hoàng. All rights reserved. <span class="highlight">Senior Tech Lead & Cloud Architect</span></p>
+                <div class="footer-extra">
+                    <span><i class="fas fa-heart"></i> Built with passion for technology</span>
+                    <span><i class="fas fa-code"></i> Performance optimized</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

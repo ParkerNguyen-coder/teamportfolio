@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Phạm Duy Quới | Thạc Sĩ Công Nghệ Sinh Học - Nhà Nghiên Cứu Xuất Sắc</title>
+    <meta name="description" content="Dr. Phạm Duy Quới - Thạc sĩ nghiên cứu công nghệ sinh học với hơn 50 thành tích xuất sắc, tác giả của 15 bài báo khoa học quốc tế.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        /* Biến màu sắc */
+        :root {
+            --primary: #979797;
+            --secondary: #283593;
+            --accent: #00acc1;
+            --light: #e8eaf6;
+            --dark: #445568;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 20px 50px rgba(0, 0, 0, 0.15);
+            --gradient: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+            --gradient-accent: linear-gradient(135deg, #00acc1 0%, #26c6da 100%);
+        }
+
+        .dark-mode {
+            --primary: #bbdefb;
+            --secondary: #90caf9;
+            --accent: #00e5ff;
+            --light: #7fa6cd;
+            --dark: #e8eaf6;
+            --gradient: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+        }
+
+        /* Reset và thiết lập cơ bản */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.7;
+            font-weight: 300;
+            overflow-x: hidden;
+            transition: var(--transition);
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        /* Typography nâng cao */
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-accent);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header chuyên nghiệp */
+        .expert-header {
+            background: var(--gradient);
+            color: white;
+            padding: 180px 0 100px;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+
+        .expert-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" fill="white" opacity="0.05"/></svg>');
+            background-size: cover;
+        }
+
+        .expert-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 172, 193, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(26, 35, 126, 0.1) 0%, transparent 50%);
+        }
+
+        /* Navigation chuyên nghiệp */
+        .expert-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 35, 126, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .expert-nav.scrolled {
+            background: rgba(13, 27, 42, 0.98);
+            padding: 10px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .nav-brand img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a:hover::before {
+            width: 80%;
+        }
+
+        .nav-links a.active {
+            background: var(--accent);
+        }
+
+        /* Hero section chuyên nghiệp */
+        .expert-hero {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-hover);
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: var(--transition);
+        }
+
+        .hero-image img:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            background: var(--gradient-accent);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text .title {
+            font-size: 1.8rem;
+            color: #bbdefb;
+            margin-bottom: 2rem;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .badge.accent {
+            background: var(--accent);
+        }
+
+        /* Stats section */
+        .stats-section {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+        }
+
+        body.dark-mode .stats-section {
+            background: #1a1a1a;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.dark-mode .stat-card {
+            background: #252525;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-accent);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--dark);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        body.dark-mode .stat-label {
+            color: var(--light);
+        }
+
+        /* Thành tích nổi bật */
+        .achievements-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e8eaf6 100%);
+        }
+
+        body.dark-mode .achievements-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.dark-mode .achievement-card {
+            background: #252525;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .achievement-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .achievement-list {
+            list-style: none;
+        }
+
+        .achievement-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        body.dark-mode .achievement-list li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .achievement-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Kỹ năng chuyên sâu */
+        .skills-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        body.dark-mode .skills-section {
+            background: #1a1a1a;
+        }
+
+        .skills-category {
+            margin-bottom: 3rem;
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        body.dark-mode .skill-name {
+            color: var(--light);
+        }
+
+        .skill-percentage {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .skill-bar-container {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        body.dark-mode .skill-bar-container {
+            background: #333;
+        }
+
+        .skill-bar {
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: 4px;
+            position: relative;
+            transition: width 1.5s ease-in-out;
+        }
+
+        /* Bài báo khoa học */
+        .publications-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #e8eaf6 0%, #f8fafc 100%);
+        }
+
+        body.dark-mode .publications-section {
+            background: linear-gradient(135deg, #252525 0%, #1a1a1a 100%);
+        }
+
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .publication-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        body.dark-mode .publication-card {
+            background: #252525;
+        }
+
+        .publication-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .publication-header {
+            background: var(--gradient);
+            color: white;
+            padding: 1.5rem;
+        }
+
+        .publication-body {
+            padding: 1.5rem;
+        }
+
+        .publication-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        body.dark-mode .publication-meta {
+            color: #aaa;
+        }
+
+        /* Dự án nghiên cứu */
+        .research-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        body.dark-mode .research-section {
+            background: #1a1a1a;
+        }
+
+        .research-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .research-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--gradient-accent);
+        }
+
+        .research-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 80px;
+        }
+
+        .research-year {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0, 172, 193, 0.3);
+        }
+
+        .research-content {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        body.dark-mode .research-content {
+            background: #252525;
+        }
+
+        /* Giải thưởng */
+        .awards-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e8eaf6 100%);
+        }
+
+        body.dark-mode .awards-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .award-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body.dark-mode .award-card {
+            background: #252525;
+        }
+
+        .award-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .award-card::before {
+            content: '🏆';
+            font-size: 3rem;
+            opacity: 0.1;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .award-year {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Liên hệ */
+        .contact-section {
+            padding: 100px 0;
+            background: var(--gradient);
+            color: white;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        .expert-footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        body.dark-mode .expert-footer {
+            background: #0d0d0d;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* Button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 30px;
+            background: var(--gradient-accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 172, 193, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 172, 193, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Progress bar animation */
+        .skill-bar {
+            animation: progress 1.5s ease-in-out forwards;
+        }
+
+        @keyframes progress {
+            from { width: 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="expert-nav" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html " class="nav-brand">
+               
+                <span> <i class="fa-solid fa-house-user"></i> Quay Lại</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#stats">Thống Kê</a></li>
+                <li><a href="#achievements">Thành Tích</a></li>
+                <li><a href="#skills">Kỹ Năng</a></li>
+                <li><a href="#publications">Công Trình</a></li>
+                <li><a href="#research">Nghiên Cứu</a></li>
+                <li><a href="#awards">Giải Thưởng</a></li>
+                <li><a href="#contact">Liên Hệ</a></li>
+                <li>
+                    <button class="btn btn-outline" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            
+            <button class="btn mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Header/Hero Section -->
+    <header class="expert-header">
+        <div class="container expert-hero">
+            <div class="hero-content animate-fade-in-up">
+                <div class="hero-image animate-float">
+                    <img src="/anh/quoi.jpg" alt="Dr. Phạm Duy Quới">
+                </div>
+                <div class="hero-text">
+                    <h1> <i class="fas fa-dna"></i> Dr. Phạm Duy Quới</h1>
+                    <div class="title">Thạc Sĩ Nghiên Cứu Công Nghệ Sinh Học</div>
+                    <p class="lead">Nhà nghiên cứu xuất sắc với 15+ bài báo quốc tế, chuyên gia về công nghệ tế bào và di truyền học phân tử. Người truyền cảm hứng cho thế hệ trẻ về khoa học và đổi mới.</p>
+                    
+                    <div class="hero-badges">
+                        <span class="badge"><i class="fas fa-graduation-cap"></i> Thạc Sĩ Xuất Sắc</span>
+                        <span class="badge"><i class="fas fa-trophy"></i> Top 1% Nhà Nghiên Cứu</span>
+                        <span class="badge accent"><i class="fas fa-globe"></i> IELTS 8.5</span>
+                        <span class="badge"><i class="fas fa-language"></i> 6 Ngôn Ngữ</span>
+                    </div>
+                    
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn">
+                            <i class="fas fa-envelope"></i> Liên Hệ Ngay
+                        </a>
+                        <a href="#publications" class="btn btn-outline">
+                            <i class="fas fa-book"></i> Công Trình Khoa Học
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats-section">
+        <div class="container">
+            <h2 class="text-center">Tổng Quan Thành Tích</h2>
+            <p class="text-center mb-5">Hơn 50 thành tích xuất sắc trong nghiên cứu khoa học và học thuật</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Bài Báo Quốc Tế</div>
+                    <p class="stat-desc">ISI/Scopus, H-index: 8</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number" data-count="32">0</div>
+                    <div class="stat-label">Giải Thưởng</div>
+                    <p class="stat-desc">Quốc gia & Quốc tế</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number" data-count="7">0</div>
+                    <div class="stat-label">Bằng Sáng Chế</div>
+                    <p class="stat-desc">Được cấp tại VN & Mỹ</p>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number" data-count="56">0</div>
+                    <div class="stat-label">Dự Án Nghiên Cứu</div>
+                    <p class="stat-desc">Chủ nhiệm & Thành viên</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thành Tích Nổi Bật -->
+    <section id="achievements" class="achievements-section">
+        <div class="container">
+            <h2>Thành Tích Nổi Bật</h2>
+            <p class="mb-5">Những cột mốc quan trọng trong sự nghiệp nghiên cứu</p>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Giải Thưởng Quốc Tế</h3>
+                    <ul class="achievement-list">
+                        <li>Giải Nhất ISEF 2023 - San Francisco, USA</li>
+                        <li>Huy chương Vàng iGEM 2022 - MIT, Boston</li>
+                        <li>Giải Đặc biệt Intel ISEF 2021</li>
+                        <li>Top 10 Nhà khoa học trẻ Châu Á 2020</li>
+                    </ul>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Thành Tích Học Thuật</h3>
+                    <ul class="achievement-list">
+                        <li>Thủ khoa Thạc sĩ Công nghệ Sinh học 2023</li>
+                        <li>Bằng khen Bộ GD&ĐT - Sinh viên xuất sắc</li>
+                        <li>Học bổng toàn phần Chính phủ Mỹ 2022</li>
+                        <li>Giải Nhất Olympic Sinh học Quốc tế 2019</li>
+                    </ul>
+                </div>
+                
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Nghiên Cứu Khoa Học</h3>
+                    <ul class="achievement-list">
+                        <li>Phát hiện gene mới kháng ung thư 2023</li>
+                        <li>Công nghệ tế bào gốc tự thân 2022</li>
+                        <li>Phương pháp chỉnh sửa gene CRISPR-Cas12</li>
+                        <li>Ứng dụng AI trong chẩn đoán gene</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kỹ Năng Chuyên Sâu -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>Kỹ Năng Chuyên Sâu</h2>
+            <p class="mb-5">Chuyên môn và kỹ năng nghiên cứu đỉnh cao</p>
+            
+            <div class="skills-category">
+                <h3>Công Nghệ Sinh Học</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Công nghệ tế bào gốc</span>
+                        <span class="skill-percentage">98%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 98%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Kỹ thuật di truyền phân tử</span>
+                        <span class="skill-percentage">96%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 96%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Công nghệ sinh học nano</span>
+                        <span class="skill-percentage">94%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 94%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skills-category">
+                <h3>Kỹ Năng Nghiên Cứu</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Phân tích dữ liệu sinh học</span>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 95%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Viết báo khoa học</span>
+                        <span class="skill-percentage">97%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 97%"></div>
+                    </div>
+                </div>
+                
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Thiết kế thí nghiệm</span>
+                        <span class="skill-percentage">93%</span>
+                    </div>
+                    <div class="skill-bar-container">
+                        <div class="skill-bar" style="width: 93%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bài Báo Khoa Học -->
+    <section id="publications" class="publications-section">
+        <div class="container">
+            <h2>Công Trình Khoa Học</h2>
+            <p class="mb-5">15 bài báo quốc tế và 7 bằng sáng chế đã được công bố</p>
+            
+            <div class="publications-grid">
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3>Nature Biotechnology</h3>
+                        <p>IF: 36.558</p>
+                    </div>
+                    <div class="publication-body">
+                        <h4>CRISPR-Cas12a mediated precise genome editing</h4>
+                        <p>Phát triển phương pháp chỉnh sửa gene chính xác ứng dụng trong điều trị ung thư</p>
+                        <div class="publication-meta">
+                            <span>2023</span>
+                            <span>Tác giả chính</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3>Cell Stem Cell</h3>
+                        <p>IF: 25.269</p>
+                    </div>
+                    <div class="publication-body">
+                        <h4>Autologous stem cell therapy for spinal cord injury</h4>
+                        <p>Liệu pháp tế bào gốc tự thân trong điều trị chấn thương tủy sống</p>
+                        <div class="publication-meta">
+                            <span>2022</span>
+                            <span>Đồng tác giả</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="publication-card">
+                    <div class="publication-header">
+                        <h3>Science Advances</h3>
+                        <p>IF: 14.136</p>
+                    </div>
+                    <div class="publication-body">
+                        <h4>Nanotechnology in targeted drug delivery</h4>
+                        <p>Ứng dụng công nghệ nano trong vận chuyển thuốc đích đến tế bào ung thư</p>
+                        <div class="publication-meta">
+                            <span>2021</span>
+                            <span>Tác giả liên hệ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dự Án Nghiên Cứu -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <h2>Dự Án Nghiên Cứu Lớn</h2>
+            <p class="mb-5">Hành trình nghiên cứu khoa học từ 2018 đến nay</p>
+            
+            <div class="research-timeline">
+                <div class="research-item">
+                    <div class="research-year">2023</div>
+                    <div class="research-content">
+                        <h3>Dự án GENOME-VN</h3>
+                        <p>Giải mã hệ gene người Việt Nam, phát hiện 15 gene mới liên quan đến bệnh di truyền. Ngân sách: 5 tỷ VNĐ.</p>
+                        <p><strong>Vai trò:</strong> Trưởng nhóm nghiên cứu</p>
+                    </div>
+                </div>
+                
+                <div class="research-item">
+                    <div class="research-year">2022</div>
+                    <div class="research-content">
+                        <h3>Ứng dụng AI trong ung thư</h3>
+                        <p>Phát triển hệ thống AI chẩn đoán sớm 8 loại ung thư với độ chính xác 96%. Hợp tác với ĐH Stanford.</p>
+                        <p><strong>Vai trò:</strong> Chuyên gia phân tích dữ liệu</p>
+                    </div>
+                </div>
+                
+                <div class="research-item">
+                    <div class="research-year">2021</div>
+                    <div class="research-content">
+                        <h3>Phát triển vaccine DNA</h3>
+                        <p>Nghiên cứu vaccine DNA cho COVID-19 và các bệnh truyền nhiễm khác. Đã thử nghiệm tiền lâm sàng thành công.</p>
+                        <p><strong>Vai trò:</strong> Nghiên cứu viên chính</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Giải Thưởng -->
+    <section id="awards" class="awards-section">
+        <div class="container">
+            <h2>Giải Thưởng & Vinh Danh</h2>
+            <p class="mb-5">Những ghi nhận xuất sắc trong sự nghiệp nghiên cứu</p>
+            
+            <div class="awards-grid">
+                <div class="award-card">
+                    <h3>Giải thưởng Tạ Quang Bửu 2023</h3>
+                    <div class="award-year">2023</div>
+                    <p>Giải thưởng khoa học công nghệ quốc gia dành cho nhà khoa học trẻ xuất sắc nhất</p>
+                </div>
+                
+                <div class="award-card">
+                    <h3>Young Scientist Award</h3>
+                    <div class="award-year">2022</div>
+                    <p>Giải thưởng Nhà khoa học trẻ Châu Á tại Hội nghị Sinh học Quốc tế Tokyo</p>
+                </div>
+                
+                <div class="award-card">
+                    <h3>Giải Nhất Sáng tạo KHCN 2021</h3>
+                    <div class="award-year">2021</div>
+                    <p>Giải nhất cuộc thi Sáng tạo Khoa học Công nghệ toàn quốc</p>
+                </div>
+                
+                <div class="award-card">
+                    <h3>Học bổng VEF 2020</h3>
+                    <div class="award-year">2020</div>
+                    <p>Học bổng toàn phần của Chương trình Giáo dục Việt Nam</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liên Hệ -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 style="color: white">Liên Hệ Hợp Tác</h2>
+            <p class="mb-5" style="color: #bbdefb">Sẵn sàng hợp tác nghiên cứu và tư vấn chuyên môn</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Thông Tin Liên Hệ</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>phamduyquoi@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Điện Thoại</h4>
+                            <p>+84 912 345 678</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Địa Chỉ</h4>
+                            <p>Phòng 501, Trung tâm Công nghệ Sinh học<br>Đại học Quốc gia TP.HCM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h4>Website</h4>
+                            <p>www.phamduyquoi-scientist.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <h3>Liên Kết Học Thuật</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-researchgate"></i>
+                        </div>
+                        <div>
+                            <h4>ResearchGate</h4>
+                            <p>researchgate.net/profile/Pham-Quoi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-google-scholar"></i>
+                        </div>
+                        <div>
+                            <h4>Google Scholar</h4>
+                            <p>Citations: 1,250+ | H-index: 12</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p>linkedin.com/in/drphamduyquoi</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-orcid"></i>
+                        </div>
+                        <div>
+                            <h4>ORCID</h4>
+                            <p>0000-0002-1234-5678</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="expert-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-brand">Dr. Phạm Duy Quới</div>
+                    <p>Nhà nghiên cứu xuất sắc về công nghệ sinh học, di truyền học và y học tái tạo. Luôn nỗ lực vì sự phát triển của khoa học Việt Nam.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-researchgate"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-google-scholar"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Chuyên Môn</h3>
+                    <ul>
+                        <li>Công nghệ tế bào gốc</li>
+                        <li>Di truyền học phân tử</li>
+                        <li>Sinh học nano</li>
+                        <li>Tin sinh học</li>
+                        <li>Y học tái tạo</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Liên Kết Nhanh</h3>
+                    <ul>
+                        <li><a href="#stats" style="color: white; text-decoration: none">Thống Kê</a></li>
+                        <li><a href="#achievements" style="color: white; text-decoration: none">Thành Tích</a></li>
+                        <li><a href="#publications" style="color: white; text-decoration: none">Công Trình</a></li>
+                        <li><a href="#research" style="color: white; text-decoration: none">Nghiên Cứu</a></li>
+                        <li><a href="#contact" style="color: white; text-decoration: none">Liên Hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dr. Phạm Duy Quới. All Rights Reserved.</p>
+                <p>Thạc sĩ Nghiên cứu Công nghệ Sinh học | Nhà Khoa học Trẻ Xuất sắc</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check saved theme
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggle.querySelector('i').classList.remove('fa-moon');
+            themeToggle.querySelector('i').classList.add('fa-sun');
+        }
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Counter animation for stats
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target;
+                    const target = parseInt(statNumber.getAttribute('data-count'));
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        statNumber.textContent = Math.round(current);
+                    }, 16);
+                    
+                    observer.unobserve(statNumber);
+                }
+            });
+        }, observerOptions);
+
+        statNumbers.forEach(stat => observer.observe(stat));
+
+        // Animate skill bars on scroll
+        const skillBars = document.querySelectorAll('.skill-bar');
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBar = entry.target;
+                    skillBar.style.animation = 'progress 1.5s ease-in-out forwards';
+                    skillsObserver.unobserve(skillBar);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillBars.forEach(bar => skillsObserver.observe(bar));
+
+        // Add active class to nav links based on scroll position
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinksContainer = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinksContainer.style.display = 
+                navLinksContainer.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Add hover effects to cards
+        document.querySelectorAll('.card, .achievement-card, .publication-card, .award-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add fade-in animation to all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
